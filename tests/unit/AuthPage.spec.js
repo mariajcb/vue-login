@@ -1,11 +1,22 @@
-import { shallowMount } from "@vue/test-utils"
+import { shallowMount, createLocalVue } from "@vue/test-utils"
+import Vuex from "vuex"
 import AuthPage from "@/views/AuthPage"
 import UserLogin from "@/components/UserLogin"
 import UserRegister from "@/components/UserRegister"
+import initialState from "@/store/state"
+import userFixture from "./fixtures/user"
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('AuthPage', () => {
+  let state
+
   const build = () => {
-    const wrapper = shallowMount(AuthPage)
+    const wrapper = shallowMount(AuthPage, {
+      localVue,
+      store: new Vuex.Store({ state })
+    })
 
     return {
       wrapper,
@@ -13,6 +24,10 @@ describe('AuthPage', () => {
       userRegister: () => wrapper.find(UserRegister)
     }
   }
+
+  beforeEach(() => {
+    state = { ...initialState }
+  })
 
   it('renders the component', () => {
     const { wrapper } = build()
@@ -28,14 +43,9 @@ describe('AuthPage', () => {
   })
 
   it('passes a binded userdata prop to UserLogin component', () => {
-    const { wrapper, userLogin } = build()
-    wrapper.setData({
-      userData: {
-        username: 'Test',
-        password: '123'
-      }
-    })
+    state.user = userFixture
+    const { userLogin } = build()
 
-    expect(userLogin().vm.userData).toBe(wrapper.vm.userData)
+    expect(userLogin().vm.user).toBe(state.user)
   })
 })

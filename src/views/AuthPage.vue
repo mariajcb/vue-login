@@ -1,23 +1,22 @@
 <template lang="html">
   <div>
-    <UserLogin :userData="userData"/>
+    <UserLogin :user="user"/>
+    <hr>
     <UserRegister />
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import UserLogin from "@/components/UserLogin";
 import UserRegister from "@/components/UserRegister";
 
 export default {
   name: "AuthPage",
-  data() {
-    return {
-      userData: {
-        username: '',
-        password: ''
-      }
-    }
+  computed: {
+    ...mapState({
+      user: "user",
+    })
   },
   components: {
     UserLogin,

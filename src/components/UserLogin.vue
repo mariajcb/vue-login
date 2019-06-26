@@ -1,15 +1,15 @@
 <template lang="html">
   <form>
-    <label for="username">User Name</label>
+    <label for="email">Email</label>
     <input
       type="text"
-      id="username"
-      :value="userData.username"/>
+      id="email"
+      :value="user.email"/>
     <label for="password">Password</label>
     <input
       type="text"
       id="password"
-      :value="userData.password"/>
+      :value="user.password"/>
     <button type="button" name="button">Submit</button>
   </form>
 </template>
@@ -18,7 +18,7 @@
 export default {
   name: "UserLogin",
   props: {
-    userData: {
+    user: {
       type: Object,
       required: true,
       default: () => ({})
