@@ -2,7 +2,7 @@
 
 exports[`AuthPage renders the component 1`] = `
 <div>
-  <userlogin-stub user="[object Object]"></userlogin-stub>
+  <userlogin-stub></userlogin-stub>
   <hr>
   <userregister-stub></userregister-stub>
 </div>
