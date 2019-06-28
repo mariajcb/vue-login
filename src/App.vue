@@ -6,11 +6,25 @@
 
 <script>
 import AuthPage from "./views/AuthPage.vue";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "app",
-  components: {
-    AuthPage
+  computed: {
+    ...mapState({
+      alert: state => state.alert
+    })
+  },
+  methods: {
+    ...mapActions({
+      clearAlert: 'alert/clear'
+    })
+  },
+  watch: {
+    $route ( to, from ) {
+      //clear alert on location change
+      this.clearAlert();
+    }
   }
 };
 </script>

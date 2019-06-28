@@ -3,8 +3,8 @@ import Vuex from "vuex"
 import AuthPage from "@/views/AuthPage"
 import UserLogin from "@/components/UserLogin"
 import UserRegister from "@/components/UserRegister"
-import initialState from "@/store/state"
-import userFixture from "./fixtures/user"
+// import initialState from "@/store/state"
+// import userFixture from "./fixtures/user"
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -42,10 +42,10 @@ describe('AuthPage', () => {
     expect(userRegister().exists()).toBe(true)
   })
 
-  it('passes a binded userdata prop to UserLogin component', () => {
-    state.user = userFixture
-    const { userLogin } = build()
-
-    expect(userLogin().vm.user).toBe(state.user)
-  })
+  // it('passes a binded userdata prop to UserLogin component', () => {
+  //   state.user = userFixture
+  //   const { userLogin } = build()
+  //
+  //   expect(userLogin().vm.user).toBe(state.user)
+  // })
 })
