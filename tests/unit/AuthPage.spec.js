@@ -1,22 +1,17 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils"
-import Vuex from "vuex"
+import { shallowMount, mount, create, createLocalVue } from "@vue/test-utils"
 import AuthPage from "@/views/AuthPage"
+import Router from "vue-router"
 import UserLogin from "@/components/UserLogin"
 import UserRegister from "@/components/UserRegister"
-import initialState from "@/store/state"
-import userFixture from "./fixtures/user"
+import BootstrapVue from "bootstrap-vue";
+import router from "@/router.js"
 
 const localVue = createLocalVue()
-localVue.use(Vuex)
+localVue.use(BootstrapVue, Router)
 
 describe('AuthPage', () => {
-  let state
-
   const build = () => {
-    const wrapper = shallowMount(AuthPage, {
-      localVue,
-      store: new Vuex.Store({ state })
-    })
+    const wrapper = shallowMount(AuthPage, { localVue })
 
     return {
       wrapper,
@@ -25,27 +20,21 @@ describe('AuthPage', () => {
     }
   }
 
-  beforeEach(() => {
-    state = { ...initialState }
-  })
-
   it('renders the component', () => {
     const { wrapper } = build()
 
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('renders main child components', () => {
-    const { userLogin, userRegister } = build()
+  it('renders a child component via routing', () => {
+    const router = new Router({
+          path: '/login',
+          component: UserLogin
+        })
+    const wrapper = mount(AuthPage, { localVue, router })
+    router.push("/login")
 
-    expect(userLogin().exists()).toBe(true)
-    expect(userRegister().exists()).toBe(true)
+    expect(wrapper.find(UserLogin).exists()).toBe(true)
   })
 
-  it('passes a binded userdata prop to UserLogin component', () => {
-    state.user = userFixture
-    const { userLogin } = build()
-
-    expect(userLogin().vm.user).toBe(state.user)
-  })
 })

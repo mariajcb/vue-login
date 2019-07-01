@@ -1,9 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthPage renders the component 1`] = `
-<div>
-  <userlogin-stub user="[object Object]"></userlogin-stub>
+<b-container-stub tag="div">
+  <b-row-stub tag="div" class="text-center">
+    <b-col-stub tag="div">
+      <h2>Begin your journey of personal growth and well-being</h2>
+    </b-col-stub>
+  </b-row-stub>
+  <b-row-stub tag="div" class="text-center">
+    <b-col-stub tag="div">
+      <b-button-stub target="_self" to="/register" event="click" routertag="a" variant="primary" type="button" tag="button">Start Your Free Account</b-button-stub>
+    </b-col-stub>
+  </b-row-stub>
   <hr>
-  <userregister-stub></userregister-stub>
-</div>
+  <b-row-stub tag="div" class="text-center">
+    <b-col-stub tag="div">
+      <h2>Already a Sounds True Customer?</h2>
+    </b-col-stub>
+  </b-row-stub>
+  <b-row-stub tag="div" class="text-center">
+    <b-col-stub tag="div">
+      <b-button-stub target="_self" to="/login" event="click" routertag="a" variant="primary" type="button" tag="button">Sign In</b-button-stub>
+    </b-col-stub>
+  </b-row-stub>
+</b-container-stub>
 `;

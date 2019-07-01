@@ -1,23 +1,35 @@
 <template lang="html">
-  <div>
-    <UserLogin :user="user"/>
+  <b-container>
+    <b-row class="text-center">
+      <b-col>
+        <h2>Begin your journey of personal growth and well-being</h2>
+      </b-col>
+    </b-row>
+    <b-row class="text-center">
+      <b-col>
+        <b-button variant="primary" to="/register">Start Your Free Account</b-button>
+      </b-col>
+    </b-row>
     <hr>
-    <UserRegister />
-  </div>
+    <b-row class="text-center">
+      <b-col>
+        <h2>Already a Sounds True Customer?</h2>
+      </b-col>
+    </b-row>
+    <b-row class="text-center">
+      <b-col>
+        <b-button variant="primary" to="/login">Sign In</b-button>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-import { mapState } from "vuex";
 import UserLogin from "@/components/UserLogin";
 import UserRegister from "@/components/UserRegister";
 
 export default {
   name: "AuthPage",
-  computed: {
-    ...mapState({
-      user: "user",
-    })
-  },
   components: {
     UserLogin,
     UserRegister

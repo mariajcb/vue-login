@@ -11,6 +11,7 @@
       id="password"
       :value="user.password"/>
     <button type="button" name="button">Submit</button>
+    <button @click="navigateToHome" type="button" name="button">Home</button>
   </form>
 </template>
 
@@ -22,6 +23,11 @@ export default {
       type: Object,
       required: true,
       default: () => ({})
+    }
+  },
+  methods: {
+    navigateToHome(){
+      this.$router.push('/');
     }
   }
 };
