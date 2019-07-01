@@ -1,27 +1,21 @@
 <template lang="html">
-  <b-container>
-    <b-row class="text-center">
-      <b-col>
-        <h2>Begin your journey of personal growth and well-being</h2>
-      </b-col>
-    </b-row>
-    <b-row class="text-center">
-      <b-col>
-        <b-button variant="primary" to="/register">Start Your Free Account</b-button>
-      </b-col>
-    </b-row>
-    <hr>
-    <b-row class="text-center">
-      <b-col>
-        <h2>Already a Sounds True Customer?</h2>
-      </b-col>
-    </b-row>
-    <b-row class="text-center">
-      <b-col>
-        <b-button variant="primary" to="/login">Sign In</b-button>
-      </b-col>
-    </b-row>
-  </b-container>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <v-card dark color="primary">
+          <v-card-text class="headline">Begin your journey of personal growth and well-being</v-card-text>
+          <v-btn to="/register">Start Your Free Account</v-btn>
+        </v-card>
+      </v-flex>
+      <v-spacer></v-spacer>
+      <v-flex xs12>
+        <v-card>
+          <v-card-text class="headline">Already a Sounds True Customer?</v-card-text>
+          <v-btn color="info" to="/login">Sign In</v-btn>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
