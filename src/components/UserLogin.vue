@@ -1,5 +1,34 @@
 <template lang="html">
-  <form>
+  <v-form v-model="valid">
+   <v-container>
+     <v-layout>
+       
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="E-mail"
+          required
+        ></v-text-field>
+      <!-- </v-flex> -->
+
+      <!-- <v-flex
+        xs12
+        md4
+      > -->
+        <v-text-field
+          v-model="password"
+          :rules="passwordRules"
+          label="Password"
+          required
+        ></v-text-field>
+      <!-- </v-flex> -->
+
+      <v-btn @click="submit">submit</v-btn>
+
+      </v-layout>
+    </v-container>
+  </v-form>
+  <!-- <form>
     <label for="email">Email</label>
     <input
       type="text"
@@ -12,7 +41,7 @@
       :value="user.password"/>
     <button type="button" name="button">Submit</button>
     <button @click="navigateToHome" type="button" name="button">Home</button>
-  </form>
+  </form> -->
 </template>
 
 <script>
