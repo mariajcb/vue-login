@@ -1,10 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
-import Vuetify from 'vuetify'
-import BootstrapVue from "bootstrap-vue";
+import Vuetify from 'vuetify';
+import Vuelidate from 'vuelidate';
 import router from "./router";
 import 'vuetify/dist/vuetify.min.css'
 
+Vue.use(Vuelidate);
 Vue.use(Vuetify);
 Vue.config.productionTip = false;
 

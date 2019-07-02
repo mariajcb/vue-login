@@ -3,11 +3,11 @@ import AuthPage from "@/views/AuthPage"
 import Router from "vue-router"
 import UserLogin from "@/components/UserLogin"
 import UserRegister from "@/components/UserRegister"
-import BootstrapVue from "bootstrap-vue";
+import Vuetify from "vuetify";
 import router from "@/router.js"
 
 const localVue = createLocalVue()
-localVue.use(BootstrapVue, Router)
+localVue.use(Vuetify, Router)
 
 describe('AuthPage', () => {
   const build = () => {
