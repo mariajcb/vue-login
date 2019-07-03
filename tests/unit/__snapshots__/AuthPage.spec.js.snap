@@ -1,27 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AuthPage renders the component 1`] = `
-<b-container-stub tag="div">
-  <b-row-stub tag="div" class="text-center">
-    <b-col-stub tag="div">
-      <h2>Begin your journey of personal growth and well-being</h2>
-    </b-col-stub>
-  </b-row-stub>
-  <b-row-stub tag="div" class="text-center">
-    <b-col-stub tag="div">
-      <b-button-stub target="_self" to="/register" event="click" routertag="a" variant="primary" type="button" tag="button">Start Your Free Account</b-button-stub>
-    </b-col-stub>
-  </b-row-stub>
-  <hr>
-  <b-row-stub tag="div" class="text-center">
-    <b-col-stub tag="div">
-      <h2>Already a Sounds True Customer?</h2>
-    </b-col-stub>
-  </b-row-stub>
-  <b-row-stub tag="div" class="text-center">
-    <b-col-stub tag="div">
-      <b-button-stub target="_self" to="/login" event="click" routertag="a" variant="primary" type="button" tag="button">Sign In</b-button-stub>
-    </b-col-stub>
-  </b-row-stub>
-</b-container-stub>
+<v-container-stub tag="div" grid-list-md="" text-xs-center="">
+  <v-layout-stub tag="div" row="" wrap="">
+    <v-flex-stub tag="div" xs12="">
+      <v-card-stub tag="div" color="primary" dark="true">
+        <v-card-text-stub class="headline">Begin your journey of personal growth and well-being</v-card-text-stub>
+        <v-btn-stub activeclass="v-btn--active" to="/register" tag="button" type="button">Start Your Free Account</v-btn-stub>
+      </v-card-stub>
+    </v-flex-stub>
+    <v-spacer-stub></v-spacer-stub>
+    <v-flex-stub tag="div" xs12="">
+      <v-card-stub tag="div">
+        <v-card-text-stub class="headline">Already a Sounds True Customer?</v-card-text-stub>
+        <v-btn-stub color="info" activeclass="v-btn--active" to="/login" tag="button" type="button">Sign In</v-btn-stub>
+      </v-card-stub>
+    </v-flex-stub>
+  </v-layout-stub>
+</v-container-stub>
 `;

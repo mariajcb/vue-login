@@ -1,33 +1,34 @@
 <template>
-  <v-form>
     <v-container>
-      <v-card-text class="headline">Sign in with your Sounds True Account</v-card-text>
-      <v-text-field
-        v-model="email"
-        :error-messages="emailErrors"
-        label="E-mail"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-      ></v-text-field>
-      <v-text-field
-        v-model="password"
-        :error-messages="passwordErrors"
-        label="Password"
-        required
-        @input="$v.password.$touch()"
-        @blur="$v.password.$touch()"
-      ></v-text-field>
-
-      <v-btn block color="info" @click="submit">submit</v-btn>
-
+      <v-form>
+          <v-card-text class="headline">Sign in with your Sounds True Account</v-card-text>
+          <v-text-field
+            v-model="email"
+            :error-messages="emailErrors"
+            label="E-mail"
+            required
+            @input="$v.email.$touch()"
+            @blur="$v.email.$touch()"
+          ></v-text-field>
+          <v-text-field
+            v-model="password"
+            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="show ? 'text' : 'password'"
+            :error-messages="passwordErrors"
+            label="Password"
+            required
+            @input="$v.password.$touch()"
+            @blur="$v.password.$touch()"
+            @click:append="show = !show"
+          ></v-text-field>
+          <v-btn color="info" @click="submit">submit</v-btn>
+      </v-form>
     </v-container>
-  </v-form>
 </template>
 
 <script>
   import { validationMixin } from 'vuelidate'
-  import { required, email, password } from 'vuelidate/lib/validators'
+  import { required, email } from 'vuelidate/lib/validators'
 
   export default {
     mixins: [validationMixin],
@@ -40,6 +41,7 @@
     data: () => ({
       email: '',
       password: '',
+      show: false
     }),
 
     computed: {
@@ -61,6 +63,9 @@
     methods: {
       submit () {
         this.$v.$touch()
+      },
+      switchVisibility() {
+        this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
       }
     }
   }
