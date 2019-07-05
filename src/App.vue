@@ -5,13 +5,8 @@
 </template>
 
 <script>
-import AuthPage from "./views/AuthPage.vue";
-
 export default {
   name: "app",
-  components: {
-    AuthPage,
-  }
 };
 </script>
 
