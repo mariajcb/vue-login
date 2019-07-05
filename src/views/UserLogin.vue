@@ -1,7 +1,8 @@
 <template>
     <v-container>
       <HeaderSoundsTrueLogo />
-      <login-form></login-form>
+      <v-card-text class="headline">Sign in with your Sounds True Account</v-card-text>
+      <user-login-form></user-login-form>
       <!-- <router-link :to="forgot-password"> -->
           Forgot Your Password?
       <!-- </router-link> -->
@@ -12,7 +13,7 @@
 <script>
   import HeaderSoundsTrueLogo from '@/components/HeaderSoundsTrueLogo.vue'
   import FooterCustomerService from '@/components/FooterCustomerService.vue'
-  import LoginForm from '@/components/LoginForm.vue';
+  import UserLoginForm from '@/components/UserLoginForm.vue';
 
   export default {
     name: "UserLogin",
@@ -20,7 +21,7 @@
     components: {
       HeaderSoundsTrueLogo,
       FooterCustomerService,
-      LoginForm,
+      UserLoginForm,
     },
 
   }

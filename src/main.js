@@ -7,7 +7,9 @@ import 'vuetify/dist/vuetify.min.css';
 import '@mdi/font/css/materialdesignicons.css';
 
 Vue.use(Vuelidate);
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  iconfont: 'mdi'
+});
 
 Vue.config.productionTip = false;
 

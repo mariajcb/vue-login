@@ -1,6 +1,5 @@
 <template lang="html">
   <v-form>
-      <v-card-text class="headline">Sign in with your Sounds True Account</v-card-text>
       <v-text-field
         v-model="email"
         :error-messages="emailErrors"
