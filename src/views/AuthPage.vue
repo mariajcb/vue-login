@@ -19,15 +19,8 @@
 </template>
 
 <script>
-import UserLogin from "@/components/UserLogin";
-import UserRegister from "@/components/UserRegister";
-
 export default {
   name: "AuthPage",
-  components: {
-    UserLogin,
-    UserRegister
-  }
 };
 </script>
 

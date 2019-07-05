@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <router-view />
+    <router-view></router-view>
   </v-app>
 </template>
 
@@ -10,7 +10,7 @@ import AuthPage from "./views/AuthPage.vue";
 export default {
   name: "app",
   components: {
-    AuthPage
+    AuthPage,
   }
 };
 </script>

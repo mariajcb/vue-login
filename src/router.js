@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import UserLogin from './components/UserLogin.vue'
-import UserRegister from './components/UserRegister.vue'
+import UserLogin from './views/UserLogin.vue'
+import UserRegister from './views/UserRegister.vue'
 const AuthPage = () => import('@/views/AuthPage')
 
 Vue.use(Router)
