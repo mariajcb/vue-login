@@ -2,11 +2,12 @@
 
 exports[`AuthPage renders the component 1`] = `
 <v-container-stub tag="div" grid-list-md="" text-xs-center="">
+  <headersoundstruelogo-stub></headersoundstruelogo-stub>
   <v-layout-stub tag="div" row="" wrap="">
     <v-flex-stub tag="div" xs12="">
-      <v-card-stub tag="div" color="primary" dark="true">
+      <v-card-stub tag="div">
         <v-card-text-stub class="headline">Begin your journey of personal growth and well-being</v-card-text-stub>
-        <v-btn-stub activeclass="v-btn--active" to="/register" tag="button" type="button">Start Your Free Account</v-btn-stub>
+        <v-btn-stub color="info" activeclass="v-btn--active" to="/register" tag="button" type="button">Start Your Free Account</v-btn-stub>
       </v-card-stub>
     </v-flex-stub>
     <v-spacer-stub></v-spacer-stub>

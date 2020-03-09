@@ -6,13 +6,13 @@
       <!-- <router-link :to="forgot-password"> -->
           Forgot Your Password?
       <!-- </router-link> -->
-      <FooterCustomerService />
+      <TheFooter />
     </v-container>
 </template>
 
 <script>
   import HeaderSoundsTrueLogo from '@/components/HeaderSoundsTrueLogo.vue'
-  import FooterCustomerService from '@/components/FooterCustomerService.vue'
+  import TheFooter from '@/components/TheFooter.vue'
   import UserLoginForm from '@/components/UserLoginForm.vue';
 
   export default {
@@ -20,7 +20,7 @@
 
     components: {
       HeaderSoundsTrueLogo,
-      FooterCustomerService,
+      TheFooter,
       UserLoginForm,
     },
 
